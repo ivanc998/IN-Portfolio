@@ -90,9 +90,9 @@ def words_by_letter(Letter,controller_path):
 
 '''
 Letters = [chr(x) for x in range(97, 123)]
- executable_path = ...
+ executable_path = ... # Complete with correct path
 
 for Letter in Letters:
-	words_by_letter(Letter = Letter,)
+	words_by_letter(Letter = Letter, executable_path)
 
 '''
