@@ -1,4 +1,4 @@
 # IN-Portfolio
-Proyectos personales enfocados directamente en aplicación de ciertas herramientas para el análisis de datos.
+Personal projects focused directly on the application of certain tools for data analysis.
 
-Autor. Iván Gustavo Nieto
+Author. Iván Gustavo Nieto
