@@ -1,1 +1,3 @@
 This project use some techniques of web scraping and data analysis to decrypt  plain text messages encrypted by the  monoalphabetic substitution cipher known as affine cipher; without use any python cryptography module.
+
+This was thought with the purpose of create a package to decrypt some texts crypted with just one alphabet.
