@@ -21,23 +21,16 @@ options.headless = True
 
 # Create the webdriver with the previous settings
 wd = webdriver.Chrome(service = service, options = options)
-url = "https://en.wikipedia.org/wiki/Computer_programming"
+url = "https://homepage.cs.uri.edu/faculty/wolfe/book/Readings/Reading13.htm"
 
 wd.get(url) # Open the website
 
-paragraphs = wd.find_elements(By.XPATH , '//p')
-paragraphs = [x.text for x in paragraphs] # Extract the text of each element found
+paragraphs = wd.find_elements(By.XPATH , '//body') # Find the tags 'body' on the page
+paragraphs = paragraphs[0].get_attribute("innerText").split('.') # Extract the text and split using '.'
 
 wd.quit() # Close the webdriver
 
-for i in range(len(paragraphs)):
-	row = ''
-	for j in paragraphs[i]:
-		if (97 <= ord(j.lower()) and ord(j.lower()) <= 122) or (j == ' '): # Delete the elements out the alphabet
-			row += j
-
-	paragraphs[i] = row
-
+paragraphs = list(map(lambda x: x + '.' ,list(filter(lambda x: len(x) > 1, paragraphs)))) # Filter and add '.'' to each text 
 
 # ---------------------------------------------------
 # Create fake texts using affine encrypt
@@ -145,7 +138,7 @@ def random_text(len_t):
 
 	return created_text 
 
-random_text_field = [random_text(random.randint(90, 120)) for j in paragraphs]
+random_text_field = [random_text(len(j) + 2) for j in paragraphs]
 
 df_dict = {'Real text' : paragraphs,
 			'Affine encrypt' : affine_field,
