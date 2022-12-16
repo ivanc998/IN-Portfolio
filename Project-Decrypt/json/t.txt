@@ -1,0 +1,2 @@
+Este folder fue diseñado para guardar los archivos json necesarios para probar la extesión del método de asignación de letras.
+ 
